@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paragraph Change</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1> Basic JavaScript Learning</h1>
+
+  <div id="paragraph-container">
+    <p id="display-paragraph">"Welcome to the JavaScript Paragraph."  
+    </p>
+  </div>
+
+  <button id="nextbutton">Next</button>
+  <button id="finishbutton">Finish</button>
+
+  <script>
+   const paragraphs = [
+        "JavaScript makes web pages interactive and fun!",
+        "You can use arrays to manage multiple messages.",
+        "Did you know? Paragraphs can be cycled with a single button.",
+        "JavaScript is used everywhere on the web!",
+        "End of extra content. Now click Finish to start again!"
+      
+    ];
+     const displayParagraph = document.getElementById('display-paragraph');
+      const nextButton = document.getElementById('nextbutton');
+      const finishButton = document.getElementById('finishbutton');
+      
+      let currentIndex = 0;
+        nextButton.addEventListener('click', function () {
+              currentIndex = (currentIndex + 1) % paragraphs.length;
+              displayParagraph.textContent = paragraphs[currentIndex];
+    });
+
+     finishButton.addEventListener('click', function () {
+        alert("Do you want to quit?");
+        currentIndex = 0;
+        displayParagraph.textContent = paragraphs[currentIndex];
+    });
+    
+  </script>
+</body>
+</html>
